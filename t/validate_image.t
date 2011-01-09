@@ -19,8 +19,8 @@ my $validator = new_ok('Data::Validate::Image');
 foreach my $image ( @{$filelist->{'images'}} ){
     my $image_info = $validator->validate( $image );
     isnt( $image_info, 0, "${image} is " . $image_info->{'file_ext'} );
-    ok( $image_info->{'width'}, 'width defined ' . $image_info->{'x'} );
-    ok( $image_info->{'height'}, 'height defined ' . $image_info->{'y'} );
+    ok( $image_info->{'width'}, 'width defined ' . $image_info->{'width'} );
+    ok( $image_info->{'height'}, 'height defined ' . $image_info->{'height'} );
     ok( $image_info->{'size'}, 'size defined ' . $image_info->{'size'} );
     ok( $image_info->{'file_ext'}, 'mime type defined ' . $image_info->{'file_ext'} );
     ok( $image_info->{'mime'}, 'file_ext defined ' . $image_info->{'mime'} );
