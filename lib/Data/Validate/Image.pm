@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -26,22 +26,28 @@ sub validate{
         return undef;
     }
 
-    my @frames = `convert -identify '${file}' /dev/null 2> /dev/null`;
-
-    if ( $? ){
-    # convert returns 0 on success - prolly a corrupt image
-        return undef;
-    }
-
-    return {
+    my $image_info = {
         'width' => $image_type->{'width'},
         'height' => $image_type->{'height'},
         'size' => (-s $file) / 1024,
         'mime' => $image_type->{'file_media_type'},
         'file_ext' => $image_type->{'file_ext'},
-        'frames' => scalar( @frames ),
-        'animated' => ($#frames) ? 1 : 0,
     };
+
+    `convert`;
+    if ( !$? ){ #test if imagemagic is installed
+        my @frames = `convert -identify '${file}' /dev/null 2> /dev/null`;
+
+        $image_info->{'frames'} = scalar( @frames );
+        $image_info->{'animated'} = ($#frames) ? 1 : 0;
+
+        if ( $? ){
+        # convert returns 0 on success - prolly a corrupt image
+            return undef;
+        }
+    }
+
+    return $image_info;
 }
 
 1;
@@ -49,6 +55,10 @@ sub validate{
 =head1 NAME
 
 Data::Validate::Image - Validates an image and returns basic info
+
+=head1 IMPORTANT
+
+B<REQUIRES> convert (from imagemagick) to be installed and in the path for animated gif/frame detection
 
 =head1 SYNOPSIS
 
@@ -76,8 +86,8 @@ hash properties are
     'size' => image filesize (KB),
     'mime' => image mime type,
     'file_ext' => *correct* file extenstion,
-    'frames' => frame count,
-    'animated' => 1 || 0,
+    'frames' => frame count, #requires convert from imagemagic to be installed
+    'animated' => 1 || 0, #requires convert from imagemagic to be installed
 
 =head1 METHODS
 
