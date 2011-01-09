@@ -2,6 +2,9 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
+our $VERSION = '0.001';
+$VERSION = eval $VERSION;
+
 use Image::Info;
 
 sub new{
