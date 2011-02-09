@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -35,7 +35,7 @@ sub validate{
     };
 
     `convert`;
-    if ( !$? ){ #test if imagemagic is installed
+    if ( $? != 127 ){ #test if imagemagic is installed
         my @frames = `convert -identify '${file}' /dev/null 2> /dev/null`;
 
         $image_info->{'frames'} = scalar( @frames );
@@ -59,6 +59,8 @@ Data::Validate::Image - Validates an image and returns basic info
 =head1 IMPORTANT
 
 B<REQUIRES> convert (from imagemagick) to be installed and in the path for animated gif/frame detection
+
+I used convert over PerlMagick because I found PerlMagick to be very unstable.
 
 =head1 SYNOPSIS
 
