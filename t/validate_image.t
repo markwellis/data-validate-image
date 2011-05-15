@@ -16,11 +16,7 @@ my $filelist = {
 };
 my $validator = new_ok('Data::Validate::Image');
 
-my $convert_installed = 0;
-`convert`;
-if ( !$? ){
-    $convert_installed = 1;
-}
+my $convert_installed = `which convert`;
 
 foreach my $image ( @{$filelist->{'images'}} ){
     my $image_info = $validator->validate( $image );

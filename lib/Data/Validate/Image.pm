@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -34,8 +34,8 @@ sub validate{
         'file_ext' => $image_type->{'file_ext'},
     };
 
-    `convert`;
-    if ( $? != 127 ){ #test if imagemagic is installed
+    my $convert_installed = `which convert`;
+    if ( $convert_installed ){ #test if imagemagic is installed
         my @frames = `convert -identify '${file}' /dev/null 2> /dev/null`;
 
         $image_info->{'frames'} = scalar( @frames );

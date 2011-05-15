@@ -1,3 +1,5 @@
+0.004
+    changed convert installed check to use which to return path to convert, or assume it's not installed - *should* fix error when convert wasn't installed, probably not on win32 though or other places where there's no which...
 0.003
     fixed `convert` install check (looks for error 127)
 0.002
