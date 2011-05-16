@@ -16,8 +16,6 @@ my $filelist = {
 };
 my $validator = new_ok('Data::Validate::Image');
 
-my $convert_installed = `which convert`;
-
 foreach my $image ( @{$filelist->{'images'}} ){
     my $image_info = $validator->validate( $image );
     isnt( $image_info, 0, "${image} is " . $image_info->{'file_ext'} );
@@ -27,7 +25,7 @@ foreach my $image ( @{$filelist->{'images'}} ){
     ok( $image_info->{'file_ext'}, 'mime type defined ' . $image_info->{'file_ext'} );
     ok( $image_info->{'mime'}, 'file_ext defined ' . $image_info->{'mime'} );
 
-    if ( $convert_installed ){
+    if ( $validator->_convert_installed ){
         if ( $image =~ m/^${dir}\/images\/animated(\d+)\.gif$/ ){
             ok( $image_info->{'animated'}, 'animated gif' ) ;
             is( $image_info->{'frames'}, $1, 'correct frame count' );
