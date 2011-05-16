@@ -1,0 +1,11 @@
+0.005
+    changed convert installed check (again) to look in each part of the path for 'convert'. should work much more better
+0.004
+    changed convert installed check to use which to return path to convert, or assume it's not installed - *should* fix error when convert wasn't installed, probably not on win32 though or other places where there's no which...
+0.003
+    fixed `convert` install check (looks for error 127)
+0.002
+    Added not about convert being needed to POD
+    adjusted so still works (reduced functionality) without convert installed 
+0.001
+    First release
