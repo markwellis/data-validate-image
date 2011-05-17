@@ -25,7 +25,14 @@ foreach my $image ( @{$filelist->{'images'}} ){
     ok( $image_info->{'file_ext'}, 'mime type defined ' . $image_info->{'file_ext'} );
     ok( $image_info->{'mime'}, 'file_ext defined ' . $image_info->{'mime'} );
 
-    if ( $validator->_convert_installed ){
+    SKIP: {
+        if (
+            ( $image =~ m/animated(\d+)?\.gif/ )
+            && !$validator->_convert_installed
+        ){
+            skip "convert not in path", 2;
+        }
+
         if ( $image =~ m/^${dir}\/images\/animated(\d+)\.gif$/ ){
             ok( $image_info->{'animated'}, 'animated gif' ) ;
             is( $image_info->{'frames'}, $1, 'correct frame count' );

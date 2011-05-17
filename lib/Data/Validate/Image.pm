@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -54,7 +54,10 @@ sub _convert_installed{
 
     my @paths = split( /:|;/, $ENV{PATH} );
     foreach my $path ( @paths ){
-        if ( -e "${path}/convert" ){
+        if ( 
+            ( -e "${path}/convert" )
+            && ( -x "${path}/convert" )
+        ){
             return 1;
         }   
     }

@@ -1,3 +1,5 @@
+0.006
+    added executable check to convert installed check
 0.005
     changed convert installed check (again) to look in each part of the path for 'convert'. should work much more better
 0.004
