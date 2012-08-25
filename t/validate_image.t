@@ -22,8 +22,8 @@ foreach my $image ( @{$filelist->{'images'}} ){
     ok( $image_info->{'width'}, 'width defined ' . $image_info->{'width'} );
     ok( $image_info->{'height'}, 'height defined ' . $image_info->{'height'} );
     ok( $image_info->{'size'}, 'size defined ' . $image_info->{'size'} );
-    ok( $image_info->{'file_ext'}, 'mime type defined ' . $image_info->{'file_ext'} );
-    ok( $image_info->{'mime'}, 'file_ext defined ' . $image_info->{'mime'} );
+    ok( $image_info->{'mime'}, 'mime type defined ' . $image_info->{'mime'} );
+    ok( $image_info->{'file_ext'}, 'file_ext defined ' . $image_info->{'file_ext'} );
 
     SKIP: {
         if (
