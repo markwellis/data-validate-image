@@ -128,7 +128,7 @@ L<http://thisaintnews.com>, L<Image::Info>
 
 =head1 LICENSE
 
-Copyright (C) 2011 by n0body L<http://thisaintnews.com/>
+Copyright (C) 2012 by n0body L<http://thisaintnews.com/>
 
 This library is free software, you can redistribute it and/or modify
 it under the same terms as Perl itself.
