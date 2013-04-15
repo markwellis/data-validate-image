@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 $VERSION = eval $VERSION;
 
 use Image::Info;
