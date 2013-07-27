@@ -16,6 +16,7 @@ MANIFEST			This list of files
 META.yml
 t/test_data/fakes/alarmbeep.mp3
 t/test_data/fakes/image.fake.jpg
+t/test_data/fakes/magic_jpg_php.jpg
 t/test_data/fakes/nologin
 t/test_data/fakes/sample_sorenson.mov
 t/test_data/fakes/sample_sorenson.mov.zip
