@@ -8,8 +8,9 @@ test_requires 'Test::More';
 test_requires 'Cwd';
 test_requires 'File::Basename';
 
+perl_version '5.008';
+
 resources(
-    'license'     => 'http://dev.perl.org/licenses/',
     'repository'  => 'https://github.com/thisaintnews/data-validate-image.git',
 );
 
