@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/thisaintnews/data-validate-image)](https://travis-ci.org/thisaintnews/data-validate-image)
+[![Build Status](https://travis-ci.org/n0body-/data-validate-image.png)](https://travis-ci.org/n0body-/data-validate-image)
 
 Data::Validate::Image
 =====
 
-Image validation and information
+Perl Image validation and information
 
 Data::Validate::Image on CPAN: [https://metacpan.org/module/Data::Validate::Image]

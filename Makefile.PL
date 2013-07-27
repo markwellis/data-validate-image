@@ -11,7 +11,7 @@ test_requires 'File::Basename';
 perl_version '5.008';
 
 resources(
-    'repository'  => 'https://github.com/thisaintnews/data-validate-image.git',
+    'repository'  => 'https://github.com/n0body-/data-validate-image.git',
 );
 
 auto_install;
