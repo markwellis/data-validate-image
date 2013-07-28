@@ -11,6 +11,7 @@ test_requires 'File::Basename';
 perl_version '5.008';
 
 resources(
+    'bugtracker'  => 'https://github.com/n0body-/data-validate-image/issues',
     'repository'  => 'https://github.com/n0body-/data-validate-image.git',
 );
 

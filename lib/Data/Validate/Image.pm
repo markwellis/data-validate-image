@@ -114,7 +114,7 @@ hash properties are
 
 =head1 SUPPORT
 
-Bugs should always be submitted via the CPAN bug tracker
+Please submit bugs through L<https://github.com/n0body-/data-validate-image/issues>
 
 For other issues, contact the maintainer
 
