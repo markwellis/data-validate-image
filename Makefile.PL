@@ -4,7 +4,7 @@ all_from('lib/Data/Validate/Image.pm');
 
 requires 'Image::Info';
 
-test_requires 'Test::More';
+test_requires 'Test::More' => '0.94';
 test_requires 'Cwd';
 test_requires 'File::Basename';
 

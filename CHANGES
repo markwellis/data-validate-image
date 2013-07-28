@@ -1,3 +1,5 @@
+0.010
+    updated Makefile.PL with minimum required version of Test::More
 0.009
     added new fake test with JPG magic bytes
     moved repo to github, update Makefile.pl
