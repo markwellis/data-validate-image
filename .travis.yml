@@ -8,4 +8,9 @@ perl:
   - "5.8"
 
 before_install:
-    - sudo apt-get install imagemagick
+  - sudo apt-get install imagemagick
+  - cpanm -n Devel::Cover::Report::Coveralls
+script:
+  - perl Makefile.PL
+  - make
+  - cover -test -report coveralls
