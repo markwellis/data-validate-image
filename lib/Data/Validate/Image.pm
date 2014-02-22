@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.012';
+our $VERSION = '0.012001';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -54,12 +54,12 @@ sub _convert_installed{
 
     my @paths = split( /:|;/, $ENV{PATH} );
     foreach my $path ( @paths ){
-        if ( 
+        if (
             ( -e "${path}/convert" )
             && ( -x "${path}/convert" )
         ){
             return 1;
-        }   
+        }
     }
 
     return 0;
@@ -92,7 +92,7 @@ I used convert over PerlMagick because I found PerlMagick to be very unstable.
 
 =head1 DESCRIPTION
 
-pretty simple image validator class. returns hash of image properties on success, 
+pretty simple image validator class. returns hash of image properties on success,
 
 undef for invalid images
 
@@ -112,23 +112,17 @@ hash properties are
 
     returns image info or undef for invalid image
 
-=head1 SUPPORT
-
-Please submit bugs through L<https://github.com/n0body-/data-validate-image/issues>
-
-For other issues, contact the maintainer
-
 =head1 AUTHORS
 
-n0body E<lt>n0body@thisaintnews.comE<gt>
+Mark Ellis E<lt>markellis@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-L<http://thisaintnews.com>, L<Image::Info>
+L<Image::Info>
 
 =head1 LICENSE
 
-Copyright (C) 2012 by n0body L<http://thisaintnews.com/>
+Copyright 2014 Mark Ellis E<lt>markellis@cpan.orgE<gt>
 
 This library is free software, you can redistribute it and/or modify
 it under the same terms as Perl itself.

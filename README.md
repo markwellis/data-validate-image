@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/n0body-/data-validate-image.png)](https://travis-ci.org/n0body-/data-validate-image)
-[![Coverage Status](https://coveralls.io/repos/n0body-/data-validate-image/badge.png)](https://coveralls.io/r/n0body-/data-validate-image)
+[![Build Status](https://travis-ci.org/markwellis/data-validate-image.png)](https://travis-ci.org/markwellis/data-validate-image)
+[![Coverage Status](https://coveralls.io/repos/markwellis/data-validate-image/badge.png)](https://coveralls.io/r/markwellis/data-validate-image)
 
 Data::Validate::Image
 =====
