@@ -84,20 +84,10 @@ Data::Validate::Image - Validates an image and returns basic info
         #invalid image
     }
 
-=head1 IMPORTANT
-
-B<REQUIRES> convert (from imagemagick) to be installed and in the path for
-animated gif/frame detection.
-
-I used convert over PerlMagick because I found PerlMagick to be very
-unstable.
-
 =head1 DESCRIPTION
 
 A simple image validator class, which provides a single C<validate> method
-that upon success returns a hash ref of image properties.
-
-=head2 image properties
+that upon success returns a hash ref of image properties:
 
   {
     'width'    => 'image width',
@@ -105,11 +95,19 @@ that upon success returns a hash ref of image properties.
     'size'     => 'image filesize (KB)',
     'mime'     => 'image mime type',
     'file_ext' => '*correct* file extenstion',
-    'frames'   => 'frame count', #requires convert from imagemagick
-    'animated' => 1 || 0, #requires convert from imagemagick
+    'frames'   => 'frame count', # requires convert from ImageMagick
+    'animated' => 1 || 0,        # requires convert from ImageMagick
   }
 
 For invalid images the C<validate> method returns C<undef>.
+
+=head2 IMPORTANT
+
+B<REQUIRES> convert (from L<ImageMagick|http://www.imagemagick.org/>) to
+detect the C<frames> and C<animated> properties.
+
+I used convert over PerlMagick because I found PerlMagick to be very
+unstable.
 
 =head1 METHODS
 
