@@ -2,7 +2,7 @@ package Data::Validate::Image;
 use strict;
 use warnings;
 
-our $VERSION = '0.012001';
+our $VERSION = '0.012002';
 $VERSION = eval $VERSION;
 
 use Image::Info;
@@ -115,9 +115,13 @@ unstable.
 
     Returns image properties for valid image or C<undef> for invalid image
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Mark Ellis E<lt>markellis@cpan.orgE<gt>
+
+=head1 CONTRIBUTORS
+
+j1n3l0 - Nelo Onyiah - E<lt>nelo.onyiah@gmail.comE<gt>
 
 =head1 SEE ALSO
 
@@ -125,7 +129,7 @@ L<Image::Info>
 
 =head1 LICENSE
 
-Copyright 2014 Mark Ellis E<lt>markellis@cpan.orgE<gt>
+Copyright 2015 Mark Ellis E<lt>markellis@cpan.orgE<gt>
 
 This library is free software, you can redistribute it and/or modify
 it under the same terms as Perl itself.
